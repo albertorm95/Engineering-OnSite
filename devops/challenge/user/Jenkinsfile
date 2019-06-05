@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+    stages {
+        stage("Clone Repository") {
+            steps {
+                echo "Clonning"
+            }
+        }
+        stage("Unit Test") {
+            steps {
+                echo "Testing"
+            }
+        }
+        stage("Build") {
+            steps {
+                sh "docker build -t albertorm95/postgres-challenge-user:$BUILD_NUMBER ."
+                sh "docker push albertorm95/postgres-challenge-user:$BUILD_NUMBER"
+            }
+        }
+        stage("Integration Test") {
+            steps {
+                echo "Testing"
+            }
+        }
+    }
+    post {
+        success {
+            echo "success"
+        }
+        failure {
+            echo "failure"
+        }
+        unstable {
+            echo "unstable"
+        }
+        cleanup {
+            deleteDir()
+        }
+    }
+}

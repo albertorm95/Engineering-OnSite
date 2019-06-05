@@ -1,0 +1,14 @@
+Iteraciones:
+Local
+1ro. Local. DONE
+2do. DB-Docker. DONE
+3ro. DB-Docker-AWS. DONE
+4to. DB-Docker-AWS, USER-Docker, VEHICLES-Docker. DONE
+AWS
+5to. DB-Docker, USER-Docker, VEHICLES-Docker, All public. DONE
+6to. DB-Docker Private, USER-Docker, VEHICLES-Docker Private. WIP
+7mo. Service Name Discovery. NEW
+8vo. Service Name Discovery. NEW
+
+
+

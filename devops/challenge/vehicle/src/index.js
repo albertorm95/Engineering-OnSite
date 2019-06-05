@@ -23,14 +23,14 @@ async function getVehicles(userId) {
   };
 }
 
-async function postVehicle(userId, veicle) {
-  const queryString = `INSERT INTO public."vehicle" (user_id, model) VALUES (${userId}, '${veicle.model}')`;
+async function postVehicle(userId, vehicle) {
+  const queryString = `INSERT INTO public."vehicle" (user_id, model) VALUES (${userId}, '${vehicle.model}')`;
   await pool.query(queryString)
     .catch((error) => {
       console.log('Error on Query\n\n', error);
     });
 
-  console.log(`inserted veicle '${veicle.model}' of user: ${userId}`);
+  console.log(`inserted vehicle '${vehicle.model}' of user: ${userId}`);
 }
 
 api.get('/user/:userId/vehicle', (req, res) => {
